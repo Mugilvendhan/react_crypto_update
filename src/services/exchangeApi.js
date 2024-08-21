@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const coinGeckoApiHeaders = {
-    'X-CMC_PRO_API_KEY': 'CG-W3hv8jL275fuy6kDgvAgSeUw',
+    'X-CMC_PRO_API_KEY': 'Enter your api',
   'Accept': 'application/json',
 };
 
