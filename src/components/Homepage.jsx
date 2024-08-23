@@ -1,6 +1,6 @@
 import React from 'react'
 import millify from 'millify';
-import { Col, Row, Statistic, Typography } from 'antd';
+import { Col, Row, Spin, Statistic, Typography } from 'antd';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ const Homepage = () => {
     const {data,isFetching} = useGetCryptosQuery(12);
     const globalStats= data?.data?.stats;
 
-    if(isFetching) return 'Loading...';
+    if(isFetching) return <Spin style={{marginTop:'1.2rem'}} tip="Loading..." />;
     
 
 

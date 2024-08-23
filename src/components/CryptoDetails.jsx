@@ -21,7 +21,7 @@ const CryptoDetails = () => {
 
   const cryptoDetails = data?.data?.coin;
 
-  if (isFetching) return <Spin tip="Loading..." />;
+  if (isFetching) return <Spin style={{marginTop:'1.2rem'}} tip="Loading..." />;
 
   if (!cryptoDetails) return <div>Unable to load cryptocurrency details.</div>;
 
@@ -56,13 +56,14 @@ const CryptoDetails = () => {
           </p>
         </Col>
         <Select
-        defaultValue="7d"
+        //defaultValue="7d"
         className="select-timeperiod"
         placeholder="Select time period"
         onChange={(value) => setTimePeriod(value)}
       >
         {time.map((date) => <Option key={date}>{date}</Option>)}
       </Select>
+    
       <LineChart sparkline={sparkline} currentPrice={millify(cryptoDetails.price)} coinName={cryptoDetails.name} />
         <Col style={{ marginTop: '1.5rem' }} className='stats-container'>
           <Col className='coin-value-statistics'>

@@ -12,7 +12,7 @@ const { Panel } = Collapse;
 const Exchanges = () => {
   const { data, isFetching } = useGetExchangeInfoQuery();
 
-  if (isFetching) return <Spin tip="Loading..." />;
+  if (isFetching) return <Spin style={{marginTop:'1.2rem'}} tip="Loading..." />;
 
   if (!data || data.length === 0) {
     return <Text>No exchanges available.</Text>;
