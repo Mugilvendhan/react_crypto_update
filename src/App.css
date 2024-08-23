@@ -31,7 +31,7 @@
 
 .main{
     flex: 0.8;
-    width: 100%;
+   
  
 }
 .routes{
@@ -53,9 +53,11 @@
     align-items: center;
     width: 100%;
 }
-.logo{
+.logo {
     margin:0 0 0 15px;
+
 }
+
 .logo a{
    color: white;
 }
@@ -75,6 +77,16 @@
     justify-content: center;
     align-items: center;
 }
+@media screen and (max-width:2000px){
+    .main{
+        margin-left: 0px;
+    }
+    .logo-container .logo {
+        font-size: 1.5rem; /* Further reduce font size for very small screens */
+        margin-top: 0.5rem; /* Adjust margin to keep alignment */
+    }
+   
+}
 
 @media screen and (max-width:1300px){
     .main{
@@ -93,49 +105,82 @@
         margin-left: 100px;
     }
 }
-
-@media screen and (max-width:800px){
-    .app{
-        flex-direction: column;
-        overflow: hidden;
-    }
-
-    .navbar{
-        flex: 1;
-        padding-left: 0%;
+@media screen and (max-width: 800px) {
+    /* Navbar becomes a top navbar */
+    .nav-container {
         width: 100%;
-    }
-
-    .main{
-        flex: 1;
-        margin-top: 90px;
-        margin-left: 0px;
-        margin-right: 10px;
-    }
-
-    .nav-container{
-        height: 8vh;
-        position:fixed;
-        width: 75%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
         z-index: 100;
         background-color: var(--bgSecondary);
     }
-  
-    .menu-control-container{
+    .home-title {
+        font-size: 1.5rem;
+    }
+    
+    .navbar {
+        width: 100%;
+        flex: 0;
+        padding-left: 0;
+    }
+    .logo{
+        font-size: 30px;
+    }
+    
+    .main {
+        flex: 1;
+        margin-top: 8vh; /* Adjust top margin to account for navbar height */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Show the menu control for opening the navbar */
+    .menu-control-container {
         display: block !important;
     }
 
-    .ant-menu{
+    /* Adjust the menu to dropdown */
+    .ant-menu {
         position: absolute;
-        right: 0px;
+        right: 0;
+        top: 8vh; /* Position below the fixed navbar */
+        width: 100%;
     }
-    .home-title{
-        font-size: 1.4rem !important;
+
+  
+}
+/* @media screen and (max-width: 1500) {
+    .main{
+        margin-left: 2rem;
     }
-    .show-more{
-        font-size: 1.3rem !important;
+} */
+
+
+@media screen and (max-width: 320px) {
+    .logo-container .logo {
+        font-size: 1.3rem; /* Further reduce font size for very small screens */
+        margin-top: 0.1rem; /* Adjust margin to keep alignment */
     }
 }
+@media screen and (max-width: 768px) {
+    .home-title {
+        font-size: 0.5rem;
+    }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 480px) {
+    .home-title link{
+        font-size: 0.2rem;
+    }
+    .show-more link{
+        font-size: 0.3rem;
+    }
+   
+}
+
 
 .coin-detail-container{
     margin: 30px;
@@ -290,6 +335,7 @@
     .heading{
         margin-top: 20px;
     }
+  
 }
 
 .select-news{
@@ -378,11 +424,13 @@ width: 50%;
     margin-top: 20px !important;
 }
 
+/* Footer */
 .footer {
-    background-color: #001529; /* Background color */
-    padding: 1rem; /* Padding around the footer content */
-    text-align: center; /* Center text alignment */
-    color: white; /* Text color */
-    width: 100%; /* Full width to remove side space */
-    box-sizing: border-box; 
+    margin-top: auto;
+    background-color: #001529;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
 }
